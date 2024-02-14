@@ -29,4 +29,4 @@ jobs:
     - name: Build and push Docker images
       uses: docker/build-push-action@v5.1.0
       with:
-        ssh: mvn -B package --file pom.xml
+        file: mvn -B package --file pom.xml
