@@ -3,7 +3,10 @@
 
 name: Maven Package
 
-on: push
+on:
+  push:
+    branches:
+    - master
 
 jobs:
   build:
@@ -25,8 +28,3 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-
-    - name: Build and push Docker images
-      uses: docker/build-push-action@v5.1.0
-      with:
-        file: mvn -B package --file pom.xml
